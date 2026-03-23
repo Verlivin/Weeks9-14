@@ -8,6 +8,8 @@ public class Knight : MonoBehaviour
     public Vector2 movement;
     public Animator animator;
     public SpriteRenderer sr;
+    public ParticleSystem ps;
+    public ParticleSystem ps2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -32,6 +34,14 @@ public class Knight : MonoBehaviour
     {
         //Debug.Log("step!");
         SFX.Play();
+        if (movement.x < 0)
+        {
+            ps2.Emit(5);
+        }
+        else
+        {
+            ps.Emit(5);
+        }
     }
     public void OnMove(InputAction.CallbackContext context)
     {
