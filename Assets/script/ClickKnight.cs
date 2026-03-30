@@ -1,7 +1,9 @@
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
-public class Knight : MonoBehaviour
+public class ClickKnight : MonoBehaviour
 {
     public AudioSource SFX;
     public float speed;
@@ -10,10 +12,12 @@ public class Knight : MonoBehaviour
     public SpriteRenderer sr;
     public ParticleSystem ps;
     public ParticleSystem ps2;
+    private Vector2 currentPos;
+    public Vector2 mousePos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        mousePos = transform.position;
     }
 
     // Update is called once per frame
@@ -29,6 +33,28 @@ public class Knight : MonoBehaviour
         {
             sr.flipX = false;
         }
+        currentPos = transform.position;
+        //Debug.Log(mousePos);
+        if (Vector2.Distance(currentPos, mousePos) > 0.5f)
+        {
+            if (mousePos.x > currentPos.x)
+            {
+                currentPos.x += speed;
+            }
+            else if (mousePos.x < currentPos.x)
+            {
+                currentPos.x -= speed;
+            }
+            if (mousePos.y > currentPos.y)
+            {
+                currentPos.y += speed;
+            }
+            else if (mousePos.y < currentPos.y)
+            {
+                currentPos.y -= speed;
+            }
+        }
+        transform.position = currentPos;
     }
     public void Footsteps()
     {
@@ -47,5 +73,14 @@ public class Knight : MonoBehaviour
     {
        movement = context.ReadValue<Vector2>();
     }
+    public void OnClick(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Debug.Log(mousePos);
+        }
     }
+}
+
 
