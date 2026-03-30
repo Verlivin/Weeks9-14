@@ -5043,7 +5043,7 @@ Transform:
   m_GameObject: {fileID: 475187088}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: -4.96, z: -10}
+  m_LocalPosition: {x: -1.5, y: -5.45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10236,7 +10236,7 @@ Transform:
   m_GameObject: {fileID: 1152018460}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: -4.96, z: -10}
+  m_LocalPosition: {x: -1.5, y: -5.45, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18902,7 +18902,7 @@ Transform:
   m_GameObject: {fileID: 1893518458}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3, y: -4.96, z: 0}
+  m_LocalPosition: {x: -1.5, y: -5.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18918,7 +18918,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893518458}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3399741c01bb7384287e4f02a65dfcfc, type: 3}
   m_Name: 
@@ -18930,6 +18930,39 @@ MonoBehaviour:
   sr: {fileID: 1893518460}
   ps: {fileID: 399733869}
   ps2: {fileID: 738006053}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.008180745
+      value: 0.022986412
+      inSlope: 1.9317832
+      outSlope: 1.9317832
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.5049446
+      value: 0.98262656
+      inSlope: -0.017395854
+      outSlope: -0.017395854
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.99591064
+      value: 0.017105103
+      inSlope: -1.9665749
+      outSlope: -1.9665749
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1893518463
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18957,8 +18990,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1893518464}
-        m_TargetAssemblyTypeName: ClickKnight, Assembly-CSharp
+      - m_Target: {fileID: 1893518462}
+        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -18988,7 +19021,19 @@ MonoBehaviour:
     m_ActionId: 27c5f898-bc57-4ee1-8800-db469aca5fe3
     m_ActionName: 'Player/Crouch[/Keyboard/c]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1893518462}
+        m_TargetAssemblyTypeName: Knight, Assembly-CSharp
+        m_MethodName: OnJump
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f1ba0d36-48eb-4cd5-b651-1c94a6531f70
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
@@ -19067,7 +19112,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893518458}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1c80fec84de2c145b820eff2b6f25b5, type: 3}
   m_Name: 
