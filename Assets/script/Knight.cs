@@ -13,6 +13,8 @@ public class Knight : MonoBehaviour
     public ParticleSystem ps2;
     public AnimationCurve curve;
     Coroutine jumpCoroutine;
+    public GameObject[] Keys; //All the keys
+    public float keyRange; //player don't have step perfectly on the keys
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -86,6 +88,19 @@ public class Knight : MonoBehaviour
             yield return null;
         }
         animator.SetBool("jump", false);
+        CheckKeys();
     }
+    public void CheckKeys(){
+		Vector2 pos = transform.position;
+        
+        for (int i = 0; i < Keys.Length; i++) {
+        Vector2 keyPos = Keys[i].transform.position;
+
+            if (pos.x >= keyPos.x - keyRange && pos.x <= keyPos.x + keyRange && pos.y >= keyPos.y - keyRange && pos.y <= keyPos.y + keyRange)
+            {
+                Debug.Log(keyPos.x + keyPos.y);
+            }
+        }
+	}
     }
 
