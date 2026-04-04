@@ -73,7 +73,6 @@ public class Knight : MonoBehaviour
     }
     IEnumerator Jump()
     {
-        Debug.Log("jump");
         float t = 0;
         Vector2 pos = transform.position;
         float initialY = transform.position.y;
@@ -98,8 +97,49 @@ public class Knight : MonoBehaviour
 
             if (pos.x >= keyPos.x - keyRange && pos.x <= keyPos.x + keyRange && pos.y >= keyPos.y - keyRange && pos.y <= keyPos.y + keyRange)
             {
-                Debug.Log(keyPos.x + keyPos.y);
-            }
+				//this is true coding
+				if (i == 0) { Debug.Log("1"); }
+				else if (i == 1) { Debug.Log("2"); }
+				else if (i == 2) { Debug.Log("3"); }
+				else if (i == 3) { Debug.Log("4"); }
+				else if (i == 4) { Debug.Log("5"); }
+				else if (i == 5) { Debug.Log("6"); }
+				else if (i == 6) { Debug.Log("7"); }
+				else if (i == 7) { Debug.Log("8"); }
+				else if (i == 8) { Debug.Log("9"); }
+				else if (i == 9) { Debug.Log("0"); }
+
+				//Q -> M
+				else if (i == 10) { Debug.Log("Q"); }
+				else if (i == 11) { Debug.Log("W"); }
+				else if (i == 12) { Debug.Log("E"); }
+				else if (i == 13) { Debug.Log("R"); }
+				else if (i == 14) { Debug.Log("T"); }
+				else if (i == 15) { Debug.Log("Y"); }
+				else if (i == 16) { Debug.Log("U"); }
+				else if (i == 17) { Debug.Log("I"); }
+				else if (i == 18) { Debug.Log("O"); }
+				else if (i == 19) { Debug.Log("P"); }
+
+				else if (i == 20) { Debug.Log("A"); }
+				else if (i == 21) { Debug.Log("S"); }
+				else if (i == 22) { Debug.Log("D"); }
+				else if (i == 23) { Debug.Log("F"); }
+				else if (i == 24) { Debug.Log("G"); }
+				else if (i == 25) { Debug.Log("H"); }
+				else if (i == 26) { Debug.Log("J"); }
+				else if (i == 27) { Debug.Log("K"); }
+				else if (i == 28) { Debug.Log("L"); }
+
+				else if (i == 29) { Debug.Log("Z"); }
+				else if (i == 30) { Debug.Log("X"); }
+				else if (i == 31) { Debug.Log("C"); }
+				else if (i == 32) { Debug.Log("V"); }
+				else if (i == 33) { Debug.Log("B"); }
+				else if (i == 34) { Debug.Log("N"); }
+				else if (i == 35) { Debug.Log("M"); }
+
+			}
         }
 	}
     }

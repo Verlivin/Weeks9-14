@@ -78,7 +78,7 @@ public class ClickKnight : MonoBehaviour
         if (context.performed)
         {
             mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            Debug.Log(mousePos);
+            //Debug.Log(mousePos);
         }
     }
 }
