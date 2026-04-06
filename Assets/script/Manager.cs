@@ -6,6 +6,8 @@ public class Manager : MonoBehaviour
 {
     public List<Sprite> playerSprites;
     public List<PlayerInput> players;
+    public List<AudioClip> SFXs;
+    public AudioSource SFX;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public void OnPlayerJoined(PlayerInput player)
@@ -18,6 +20,7 @@ public class Manager : MonoBehaviour
 
         LocalMultiplayerController controller = player.GetComponent<LocalMultiplayerController>();
         controller.manager = this;
+        controller.SFX.clip = SFXs[player.playerIndex];
     }
     public void PlayerAttacking(PlayerInput attackingPlayer)
     {
@@ -25,10 +28,12 @@ public class Manager : MonoBehaviour
         {
             if (attackingPlayer == players[i]) continue;
 
-            if(Vector2.Distance(attackingPlayer.transform.position, players[i].transform.position) < 0.5f)
-            {//a
+            if (Vector2.Distance(attackingPlayer.transform.position, players[i].transform.position) < 0.5f)
+            {
+                SFX.Play();
                 Debug.Log("Player " + attackingPlayer.playerIndex + " attcked player " + players[i].playerIndex);
             }
+            
         }
     }
 }
