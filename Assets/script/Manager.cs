@@ -26,7 +26,7 @@ public class Manager : MonoBehaviour
             if (attackingPlayer == players[i]) continue;
 
             if(Vector2.Distance(attackingPlayer.transform.position, players[i].transform.position) < 0.5f)
-            {
+            {//a
                 Debug.Log("Player " + attackingPlayer.playerIndex + " attcked player " + players[i].playerIndex);
             }
         }
